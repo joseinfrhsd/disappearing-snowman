@@ -1,7 +1,8 @@
 // ADD YOUR ARRAY OF WORDS HERE
 
+
 var snowmanParts = [".hat", ".face", ".scarf", ".hands", ".body-top", ".body-middle", ".body-bottom"];
-var randomWord = getRandomWord(words);
+var PastaParty = getRandomWord(words);
 var keyboardContainer = document.querySelector('#keyboard-container');
 keyboardContainer.addEventListener("click", handleKeyboardClick);
 
@@ -72,6 +73,22 @@ function getRandomWord(words) {
 }
 
 // CHECK FOR LOSER FUNCTION HERE
+function checkForLoser() {
+  if (snowmanParts.length === 0) {
+    snowman.container.innerHTML = "<h2>You lost, game over!</h2>";
+    keyboardContainer.innerHTML = "<h2>The word was: " + PastaParty + "</h2>";
+  }
+  else{
+
+  }
+}
 
 
 // CHECK FOR WINNER FUNCTION HERE
+function checkForWinner() {
+  var hiddenLetterElements = document.querySelectorAll(".hidden");
+  if (hiddenLetterElements.length === 0) {
+    alert("You won! Congratulations!");
+    // Optionally, you can reset the game or reload the page here
+  }
+}
